@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Comparison</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <style>
+        body {
+            font-family: "Trirong", serif;
+        }
+        .custom-table {
+            max-width: 700px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Product Price Comparison</h1>
+        <div class="custom-table">
+            <table class="table table-bordered mt-4">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Store</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for store, price in prices.items() %}
+                    <tr>
+                        <td>{{ store }}</td>
+                        <td>{{ price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h3 class="text-center mt-4">The lowest price is Rs. <span class="text-info font-weight-bold">{{
+                    lowest_price }}</span> from <span class="text-info font-weight-bold">{{ lowest_price_store }}</span>
+            </h3>
+        </div>
+    </div>
+</body>
+
+</html>
